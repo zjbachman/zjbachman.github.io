@@ -217,7 +217,6 @@ input[type="submit"] {
 }
 
 label {
-    vertical-align: top;
     margin-right: 20px;
     font-size: 35px;
     font-family: var(--header-text);
