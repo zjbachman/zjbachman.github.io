@@ -40,6 +40,12 @@ h1,h2,h3,h4,h5,h6 {
     width: 30px;
     border-radius: 3px;
     margin: 0 10px;
+    transition: transform .4s;
+}
+
+.social-a:hover {
+    transform: scale(.85);
+    transition: transform .4s;
 }
 /* SPLASH PAGE */
 
@@ -91,6 +97,8 @@ h1,h2,h3,h4,h5,h6 {
     box-shadow: 1px 1px var(--light-gray);
     transition: background-color .4s, color .4s;
     margin: 5px;
+    font-family: var(--header-text);
+    font-size: 20px;
 }
 
 .splash-link:hover {
@@ -132,6 +140,12 @@ h1,h2,h3,h4,h5,h6 {
     color: var(--dark-gray);
     font-weight: bolder;
     margin: 0 15px;
+    transition: transform .4s;
+}
+
+.main-link:hover {
+    transform: scale(.9);
+    transition: transform .4s;
 }
 
 #portfolio-nav {
@@ -148,15 +162,23 @@ h1,h2,h3,h4,h5,h6 {
     font-family: var(--header-text);
     color: var(--dark-gray);
     font-weight: bolder;
+    transition: transform .4s;
+}
+
+.portfolio-link:hover {
+    transform: scale(.8);
+    transition: transform .4s;
 }
 
 #image-container {
     width: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
 }
 
 #curr-img {
-    height: 80%;
+    height: 90%;
 }
 
 /* ABOUT ME */
@@ -200,8 +222,8 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    width: 100%;
-    padding: 20px;
+    width: auto;
+    padding: 10px 20px;
     border-radius: 3px;
     font-family: var(--sans-text);
     font-size: 20px;
