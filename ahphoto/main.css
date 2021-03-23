@@ -178,7 +178,18 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #curr-img {
-    height: 90%;
+    width: auto;
+    border: 1px solid pink;
+    box-sizing:border-box;
+    text-align: center;
+}
+
+.carousel-btn {
+    width: 150px;
+    color: var(--dark-gray);
+    font-family: var(--sans-text);
+    font-size: 30px;
+    vertical-align: middle;
 }
 
 /* ABOUT ME */
