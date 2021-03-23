@@ -3,6 +3,7 @@
     --smoke: whitesmoke;
     --dark-gray: #333;
     --header-text: 'Amatic SC', cursive;
+    --sans-text: 'Open Sans Condensed', sans-serif;
 }
 
 body {
@@ -12,8 +13,41 @@ body {
     margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--header-text);
+}
+
+#full-header {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#header-img {
+    width: 150px;
+}
+
+#social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.social-a {
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    margin: 0 10px;
+}
+/* SPLASH PAGE */
+
 #main-container {
     height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 #splash {
@@ -69,8 +103,131 @@ body {
     font-size: 40px;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    margin: 0;
-    padding: 0;
+/* PORTFOLIO PAGE */
+
+#header {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: .5px solid var(--dark-gray);
+}
+
+#main-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 5px;
+    flex-wrap: wrap;
+    align-items:flex-end;
+}
+
+.main-link {
+    text-decoration: none;
+    font-size: 30px;
     font-family: var(--header-text);
+    color: var(--dark-gray);
+    font-weight: bolder;
+    margin: 0 15px;
+}
+
+#portfolio-nav {
+    margin: 10px 0 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.portfolio-link {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: var(--header-text);
+    color: var(--dark-gray);
+    font-weight: bolder;
+}
+
+#image-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#curr-img {
+    height: 80%;
+}
+
+/* ABOUT ME */
+
+#about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#bio {
+    margin-right: 20px;
+    width: 30%;
+    font-family: var(--sans-text);
+    font-size: 20px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+}
+
+.gear-li {
+    list-style: disc;
+}
+
+/* CONTACT */
+#contact {
+    width: 30%;
+    margin: 20px auto;
+}
+
+input[type="text"] {
+    padding: 5px 10px;
+    color: var(--dark-gray);
+    font-size: 18px;
+    font-family: var(--sans-text);
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 20px;
+    border-radius: 3px;
+    font-family: var(--sans-text);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 5px;
+    border: 1px solid #CCC;
+}
+
+#message {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--sans-text);
+}
+
+label {
+    vertical-align: top;
+    margin-right: 20px;
+    font-size: 35px;
+    font-family: var(--header-text);
+    display: block;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media screen and (max-width: 600px) {
+    #image-container {
+        width: 100%;
+    }
 }
