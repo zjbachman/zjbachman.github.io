@@ -163,25 +163,30 @@ h1,h2,h3,h4,h5,h6 {
     color: var(--dark-gray);
     font-weight: bolder;
     transition: transform .4s;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .portfolio-link:hover {
     transform: scale(.8);
     transition: transform .4s;
+    background: none;
+    border: none;
 }
 
 #image-container {
-    width: 100%;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr auto;
 }
 
-#curr-img {
-    width: auto;
-    border: 1px solid pink;
-    box-sizing:border-box;
+#img-box {
+    height: 80%;
     text-align: center;
+}
+
+#curr-img {
+    height: 100%;
 }
 
 .carousel-btn {

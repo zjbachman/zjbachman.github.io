@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+    <script type="text/javascript" src="./images.js"></script>
+
     <div id="main-container">
         <div id="full-header">
             <div id="header">
@@ -26,19 +28,61 @@
                 </nav>
             </div>
             <nav id="portfolio-nav">
-                <a href="" class="portfolio-link">Children</a>
-                <a href="" class="portfolio-link">Couples</a>
-                <a href="" class="portfolio-link">Seniors</a>
-                <a href="" class="portfolio-link">Wedding</a>
+                <button type="button" class="portfolio-link" onclick="setSection('children')">Children</button>
+                <button type="button" class="portfolio-link" onclick="setSection('couples')">Couples</button>
+                <button type="button" class="portfolio-link" onclick="setSection('senior')">Senior</button>
+                <button type="button" class="portfolio-link" onclick="setSection('weddings')">Wedding</button>
             </nav>
         </div>
         <div id="image-container">
-            <span class="carousel-btn">&lt;</span>
-            <span id="curr-img">
-                <img src="images/DSC_1827.jpg">
+            <span class="carousel-btn">
+                <button type="button" onclick="prevImg()">&lt;</button>
             </span>
-            <span class="carousel-btn">&gt;</span>
+            <span id="img-box">
+                <a href="" id="full-img"><img src="" id="curr-img"></a>
+            </span>
+            <span class="carousel-btn"><button type="button" onclick="nextImg()">&gt;</button></span>
         </div>
     </div>
+    <script>
+        let currImg = document.getElementById("curr-img");
+        let fullImg = document.getElementById("full-img");
+        let currIndex = 0;
+        let section = "children";
+        
+        window.onload = getImage();
+
+        function getImage () {
+            currImg.src = imgData[section][currIndex].src;
+            document.getElementById("full-img").href = imgData[section][index].full_size;
+            
+        }
+        
+        function nextImg() {
+            if(currIndex === imgData[section].length) {
+                currIndex = 0;
+            } else {
+                currIndex++;
+            }
+
+            currImg.src = imgData[section][currIndex].src;
+        }
+
+        function prevImg() {
+            if(currIndex < 0) {
+                currIndex = imgData[section].length - 1;
+            } else {
+                currIndex--;
+            }
+
+            currImg.src = imgData[section][currIndex].src;
+        }
+
+        function setSection(selCat) {
+            section = selCat;
+            getImage();
+        }
+    </script>
+
 </body>
 </html>
