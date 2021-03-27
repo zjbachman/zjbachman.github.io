@@ -39,9 +39,13 @@
                 <button type="button" onclick="prevImg()">&lt;</button>
             </span>
             <span id="img-box">
-                <a href="" id="full-img"><img src="" id="curr-img"></a>
+                <img src="" id="curr-img" onclick="openFullSize()">
             </span>
             <span class="carousel-btn"><button type="button" onclick="nextImg()">&gt;</button></span>
+        </div>
+        <div id="full-size-modal">
+            <img src="" class="full-size-img" id="full-size">
+            <div id="full-size-message">Click to close</div>
         </div>
     </div>
     <script>
@@ -49,13 +53,12 @@
         let fullImg = document.getElementById("full-img");
         let currIndex = 0;
         let section = "children";
+        let fullSizeModal = document.getElementById("full-size-modal");
         
         window.onload = getImage();
 
         function getImage () {
-            currImg.src = imgData[section][currIndex].src;
-            document.getElementById("full-img").href = imgData[section][index].full_size;
-            
+            currImg.src = imgData[section][currIndex].src;            
         }
         
         function nextImg() {
@@ -82,6 +85,17 @@
             section = selCat;
             getImage();
         }
+
+        function openFullSize() {
+            document.getElementById("full-size").src = imgData[section][currIndex].src;
+            fullSizeModal.style.visibility = "visible";
+        }
+
+        fullSizeModal.addEventListener("click", function() {
+            fullSizeModal.style.visibility = "hidden";
+        });
+
+
     </script>
 
 </body>
