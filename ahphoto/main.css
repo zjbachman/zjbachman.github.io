@@ -281,15 +281,18 @@ label {
     left: 0;
     background: black;
     width: 100%;
-    max-height: 100%;
-    box-sizing: content-box;
-    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#modal-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .full-size-img {
-    max-height: 100%;
-    object-fit: fill;
-    text-align: center;
+    max-height: 550px;
+    object-fit: scale-down;
     margin: 0 auto;
 }
 
