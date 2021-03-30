@@ -353,7 +353,9 @@ label {
     }
 
     #curr-img {
-        width: 375px;
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     /* ABOUT */
