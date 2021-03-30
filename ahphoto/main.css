@@ -341,7 +341,20 @@ label {
 
     /* PORTFOLIO */
 
+    #image-container {
+        background-color: pink;
+        width: auto;
+        height: auto;
+        display: block;
+    }
 
+    #img-box {
+        width: 100%;
+    }
+
+    #curr-img {
+        width: 375px;
+    }
 
     /* ABOUT */
 
