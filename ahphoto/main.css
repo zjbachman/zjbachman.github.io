@@ -342,9 +342,7 @@ label {
     /* PORTFOLIO */
 
     #image-container {
-        background-color: pink;
-        width: auto;
-        height: auto;
+        width: 95%;
         display: block;
     }
 
