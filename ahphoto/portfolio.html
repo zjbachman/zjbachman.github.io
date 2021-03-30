@@ -85,6 +85,7 @@
 
         function setSection(selCat) {
             section = selCat;
+            setIndex();
             getImage();
         }
 
@@ -97,6 +98,9 @@
             fullSizeModal.style.visibility = "hidden";
         });
 
+        function setIndex() {
+            currIndex = 0;
+        }
 
     </script>
 

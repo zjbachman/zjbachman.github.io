@@ -4,6 +4,7 @@
     --dark-gray: #333;
     --header-text: 'Amatic SC', cursive;
     --sans-text: 'Open Sans Condensed', sans-serif;
+    --pink-brown: rosybrown;
 }
 
 body {
@@ -90,7 +91,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .splash-link {
     color: var(--light-gray);
-    background-color: var(--dark-gray);
+    background-color: var(--pink-brown);
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 3px;
@@ -99,12 +100,15 @@ h1,h2,h3,h4,h5,h6 {
     margin: 5px;
     font-family: var(--header-text);
     font-size: 20px;
+    text-shadow: .5px .5px var(--dark-gray);
+    font-weight: bold;
 }
 
 .splash-link:hover {
     background-color: var(--light-gray);
-    color: var(--dark-gray);
+    color: var(--pink-brown);
     transition: background-color .4s, color .4s;
+    text-shadow: var(--dark-gray);
 }
 
 .splash-header {
@@ -141,11 +145,16 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bolder;
     margin: 0 15px;
     transition: transform .4s;
+    padding: 5px;
 }
 
 .main-link:hover {
     transform: scale(.9);
     transition: transform .4s;
+    background-color: var(--pink-brown);
+    padding: 5px;
+    color: var(--light-gray);
+    border-radius: 4px;
 }
 
 #portfolio-nav {
@@ -171,7 +180,9 @@ h1,h2,h3,h4,h5,h6 {
 .portfolio-link:hover {
     transform: scale(.8);
     transition: transform .4s;
-    background: none;
+    background-color: rosybrown;
+    border-radius: 4px;
+    color: var(--light-gray);
     border: none;
 }
 
@@ -246,21 +257,32 @@ input[type="text"] {
     width: 100%;
 }
 
+input[type="text"]:focus {
+    box-shadow: 1px 4px var(--pink-brown);
+}
+
 input[type="submit"] {
-    width: auto;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 5px 20px;
     border-radius: 3px;
     font-family: var(--sans-text);
     font-size: 20px;
     font-weight: bolder;
     margin-top: 5px;
     border: 1px solid #CCC;
+    background-color: rosybrown;
+    color: white;
+    text-shadow: .5px .5px var(--dark-gray);
 }
 
 #message {
     width: 100%;
     padding: 10px;
     font-family: var(--sans-text);
+}
+
+#message:focus {
+    box-shadow: 1px 4px var(--pink-brown);
 }
 
 label {
@@ -308,4 +330,40 @@ label {
     #image-container {
         width: 100%;
     }
+
+    /* SPLASH PAGE */
+
+    #splash-content {
+        position: absolute;
+        top: 40%;
+        left: 10px;
+    }
+
+    /* PORTFOLIO */
+
+
+
+    /* ABOUT */
+
+    #about {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 90%;
+    }
+
+    #bio {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #profile-pic {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .profile-img {
+        border-radius: 10px;
+        transform: scale(.75);
+    }
+
 }
