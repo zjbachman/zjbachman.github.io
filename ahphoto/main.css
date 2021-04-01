@@ -187,8 +187,14 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #image-container {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #img-box {

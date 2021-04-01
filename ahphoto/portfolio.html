@@ -37,13 +37,20 @@
         <div id="image-container">
             <span id="img-box">
                 <img src="" id="curr-img" onclick="openFullSize()">
+       
             </span>
-            <span class="carousel-btn">
-                <button type="button" onclick="prevImg()">&lt;</button>
-            </span>
-            <span class="carousel-btn">
-                <button type="button" onclick="nextImg()">&gt;</button>
-            </span>
+            <div id="nav-btn-row">
+                <span class="carousel-btn">
+                    <button type="button" onclick="prevImg()">&lt;</button>
+                </span>
+                <span class="carousel-btn">
+                    <button type="button" id="play-btn">Play</button>
+                </span>
+                <span class="carousel-btn">
+                    <button type="button" onclick="nextImg()">&gt;</button>
+                </span>
+            </div>
+
         </div>
         <div id="full-size-modal">
             <div id="modal-container">
@@ -103,6 +110,15 @@
         function setIndex() {
             currIndex = 0;
         }
+
+        /* slideshow function */
+
+        document.getElementById('play-btn').addEventListener("click", function() {
+                setInterval(function() {
+                   nextImg();
+                }, 3000);
+        });
+
 
     </script>
 
