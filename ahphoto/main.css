@@ -505,8 +505,22 @@ label {
     /* PORTFOLIO */
 
     #image-container {
-        width: 95%;
+        width: 85%;
         display: block;
+    }
+
+    #container {
+        max-width: 90%;
+    }
+
+    .img-cell {
+        width: 375px;
+        height: auto;
+    }
+
+    .basic-img {
+        max-width: 600px;
+        height: auto;
     }
 
     #img-box {
