@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+          box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 1310px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 10px 5px 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .img-cell {
+            /*
+            float: left;
+            position: relative;
+            width: 20%;*/
+            width: 200px;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .basic-img {
+            display: block;
+            width: auto;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .img-basic{
+            padding: 0 5px;
+        }
+        
+        .img-left-300 {
+            position: relative;
+            left: -300px;
+        }
+
+
+        .img-left-250 {
+            position: relative;
+            left: -250px;
+        }
+
+        .img-left-200 {
+            position: relative; 
+            left: -200px;
+        }
+
+        .img-left-175 {
+            position: relative;
+            left: -175px;
+        }
+
+        .img-left-150 {
+            position: relative;
+            left: -150px;
+        }
+
+        .img-left-125 {
+            position: relative;
+            left: -125px;
+        }
+
+        .img-left-100 {
+            position: relative;
+            left: -100px;
+        }
+
+        .img-left-75 {
+            position: relative;
+            left: -75px;
+        }
+
+        .img-left-50 {
+            position: relative;
+            left: -50px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <script type="text/javascript" src="./images.js"></script>
+    <select onclick="setVar(this.value)">
+        <option value="children" selected="selected">Children</option>
+        <option value="couples">Couples</option>
+        <option value="senior">Seniors</option>
+        <option value="weddings">Weddings</option>
+        <option value=""></option>
+    </select>
+    <div id="container">
+        
+    </div>
+
+    <script>
+
+        let section = 'couples'; // children is set as default
+
+        function setVar(sel) {
+            section = sel;
+
+            populate();
+
+        }
+
+        const populate = () => {
+            let cont = document.getElementById("container");
+
+            cont.textContent = '';
+            for(let i = 0; i < imgData[section].length; i++) {
+                let newCell = document.createElement("DIV");
+                newCell.className = "img-cell";
+
+                let imgBasic = document.createElement("DIV");
+                imgBasic.className = "image_basic";
+
+                newCell.appendChild(imgBasic);
+
+                let newImg = document.createElement("IMG");
+                newImg.className = `basic-img ${imgData[section][i].adjustment}`;
+                newImg.src = imgData[section][i].src;
+
+
+                imgBasic.appendChild(newImg);
+                cont.appendChild(newCell);
+            }
+        }
+
+        window.onload = populate();
+    </script>
+</body>
+</html>

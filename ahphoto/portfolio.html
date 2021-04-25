@@ -27,30 +27,29 @@
                     <a href="https://facebook.com"><img src="./icons/Facebook_icon_192.png"  class="social-a"></a>
                 </nav>
             </div>
-            <nav id="portfolio-nav">
-                <button type="button" class="portfolio-link" onclick="setSection('children')">Children</button>
-                <button type="button" class="portfolio-link" onclick="setSection('couples')">Couples</button>
-                <button type="button" class="portfolio-link" onclick="setSection('senior')">Senior</button>
-                <button type="button" class="portfolio-link" onclick="setSection('weddings')">Wedding</button>
-            </nav>
         </div>
         <div id="image-container">
+            <select id="selection" onchange="setSection(this.value)">
+                <option class="section" selected="selected">Sort By:</option>
+                <option class="section" value="children">Children</option>
+                <option class="section" value="couples">Couples</option>
+                <option class="section" value="senior">Senior</option>
+                <option class="section" value="weddings">Wedding</option>
+            </select>
+
+            <div id="container"></div>
+
+            <!--
             <span id="img-box">
                 <img src="" id="curr-img" onclick="openFullSize()">
        
             </span>
             <div id="nav-btn-row">
                 <span class="carousel-btn">
-                    <button type="button" onclick="prevImg()">&lt;</button>
-                </span>
-                <span class="carousel-btn">
-                    <button type="button" id="play-btn">Play</button>
-                </span>
-                <span class="carousel-btn">
-                    <button type="button" onclick="nextImg()">&gt;</button>
+                    <img src="./icons/play-button.png" id="play-btn">
                 </span>
             </div>
-
+            -->
         </div>
         <div id="full-size-modal">
             <div id="modal-container">
@@ -65,11 +64,36 @@
         let currIndex = 0;
         let section = "children";
         let fullSizeModal = document.getElementById("full-size-modal");
+        let playBtn = document.getElementById("play-btn");
+        let slideStatus = false;
         
         window.onload = getImage();
 
         function getImage () {
-            currImg.src = imgData[section][currIndex].src;            
+            // currImg.src = imgData[section][currIndex].src; 
+            let cont = document.getElementById("container");
+
+            cont.textContent = '';
+            for(let i = 0; i < imgData[section].length; i++) {
+                let newCell = document.createElement("DIV");
+                newCell.className = "img-cell";
+
+                let imgBasic = document.createElement("DIV");
+                imgBasic.className = "image_basic";
+
+                newCell.appendChild(imgBasic);
+
+                let newImg = document.createElement("IMG");
+                newImg.className = `basic-img ${imgData[section][i].adjustment}`;
+                newImg.src = imgData[section][i].src;
+                newImg.onclick = function() {
+                    openFullSize(this.src);
+                }
+
+
+                imgBasic.appendChild(newImg);
+                cont.appendChild(newCell);
+            }           
         }
         
         function nextImg() {
@@ -98,8 +122,9 @@
             getImage();
         }
 
-        function openFullSize() {
-            document.getElementById("full-size").src = imgData[section][currIndex].src;
+        function openFullSize(val) {
+            //alert(val);
+            document.getElementById("full-size").src = val; //imgData[section][currIndex].src;
             fullSizeModal.style.visibility = "visible";
         }
 
@@ -113,11 +138,18 @@
 
         /* slideshow function */
 
-        document.getElementById('play-btn').addEventListener("click", function() {
+        playBtn.addEventListener("click", function() {
+            if(slideStatus === false) {
+                playBtn.src = "./icons/pause-button.png";
                 clearInterval();
                 setInterval(function() {
                    nextImg();
                 }, 3000);
+            } else {
+                playBtn.src = "./icons/play-button.png";
+                slideStatus === true;
+                clearInterval();
+            }
         });
 
 
