@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        .nav-icon {
+            margin: 1em;
+            width: 40px;
+            cursor: pointer;
+        }
+
+        .nav-icon:after, 
+        .nav-icon:before, 
+        .nav-icon div {
+            background-color: rgb(255, 0, 0);
+            border-radius: 3px;
+            content: '';
+            display: block;
+            height: 5px;
+            margin: 7px 0;
+            transition: all .2s ease-in-out;
+        }
+
+        #nav {
+            visibility: none;
+        }
+
+        .nav-link {
+            background-color: darkgray;
+            color: red;
+            font-size: 25px;
+            padding: 15px 10px;
+            margin: 5px;
+        }
+
+        .nav-link:hover {
+            transform: scale(.98);
+            transition: transform .2s;
+        }
+
+        .nav-menu {
+            display: none;
+        }
+
+        /*
+        
+        .nav-icon:hover:before {
+            transform: translateY(12px) rotate(135deg);
+            -moz-transform: translateY(12px) rotate(135deg);
+        }
+
+        .nav-icon:hover:after {
+            transform: translateY(-12px) rotate(-135deg);
+            -moz-transform: translateY(-12px) rotate(-135deg);
+        }
+
+        .nav-icon:hover div {
+            transform: scale(0);
+            -moz-transform: scale(0);
+        }
+*/
+    
+        @media screen and (max-width: 600px) {
+            .show-nav-menu {
+                visibility: visible;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-icon" id="hamb-menu">
+        <div></div>
+    </div>
+    <div id="nav" class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Food</a>
+        <a href="#" class="nav-link">Social</a>
+        <a href="#" class="nav-link">Poop</a>
+    </div>
+    <div id="cunt">
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+    </div>
+
+    <script>
+        let ham = document.getElementById("hamb-menu");
+        let box = document.getElementById("cunt");
+        let navMenu = document.getElementById("nav");
+
+        ham.addEventListener("click", () => {
+            if(navMenu.className === "nav-menu") {
+                navMenu.className = "show-nav-menu";
+            } else {
+                navMenu.className = "nav-menu";
+            }
+        });
+    </script>
+</body>
+</html>

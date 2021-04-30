@@ -15,16 +15,22 @@
 
     <div id="main-container">
         <div id="full-header">
-            <div id="header">
-                <nav id="main-nav">
-                    <a href="./index.html" class="main-link"><img src="assets/drawing.svg" id="header-img"></a>
+            <div id="header-logo">
+                <a href="./index.html"><img src="assets/drawing.svg" id="header-img"></a>
+            </div>
+            <div id="header">                                    
+                <div class="nav-icon" id="hamb-menu">
+                    <div></div>
+                </div>
+                <nav id="main-nav" class="nav">
                     <a href="./portfolio.html" class="main-link">Portfolio</a>
                     <a href="./contact.html" class="main-link">Contact</a>
                     <a href="./about.html" class="main-link">About Me</a>
-                </nav>
-                <nav id="social-links">
-                    <a href="https://instagram.com"><img src="./icons/64px-Instagram-Icon.png"  class="social-a"></a>
-                    <a href="https://facebook.com"><img src="./icons/Facebook_icon_192.png"  class="social-a"></a>
+                    
+                    <nav id="social-links">
+                        <a href="https://instagram.com"><img src="./icons/64px-Instagram-Icon.png"  class="social-a"></a>
+                        <a href="https://facebook.com"><img src="./icons/Facebook_icon_192.png"  class="social-a"></a>
+                    </nav>
                 </nav>
             </div>
         </div>
@@ -38,122 +44,24 @@
             </select>
 
             <div id="container"></div>
-
-            <!--
-            <span id="img-box">
-                <img src="" id="curr-img" onclick="openFullSize()">
-       
-            </span>
-            <div id="nav-btn-row">
-                <span class="carousel-btn">
-                    <img src="./icons/play-button.png" id="play-btn">
-                </span>
-            </div>
-            -->
         </div>
+
+        <footer>
+        </footer>
+
         <div id="full-size-modal">
+            <span id="close-btn">&times;</span>
             <div id="modal-container">
                 <img src="" class="full-size-img" id="full-size">
-                <div id="full-size-message">Click to close</div>
+                <div class="modal-nav">
+                    <img src="./icons/play-button.png" id="play-btn">
+                </div>
             </div>
+
         </div>
     </div>
-    <script>
-        let currImg = document.getElementById("curr-img");
-        let fullImg = document.getElementById("full-img");
-        let currIndex = 0;
-        let section = "children";
-        let fullSizeModal = document.getElementById("full-size-modal");
-        let playBtn = document.getElementById("play-btn");
-        let slideStatus = false;
-        
-        window.onload = getImage();
-
-        function getImage () {
-            // currImg.src = imgData[section][currIndex].src; 
-            let cont = document.getElementById("container");
-
-            cont.textContent = '';
-            for(let i = 0; i < imgData[section].length; i++) {
-                let newCell = document.createElement("DIV");
-                newCell.className = "img-cell";
-
-                let imgBasic = document.createElement("DIV");
-                imgBasic.className = "image_basic";
-
-                newCell.appendChild(imgBasic);
-
-                let newImg = document.createElement("IMG");
-                newImg.className = `basic-img ${imgData[section][i].adjustment}`;
-                newImg.src = imgData[section][i].src;
-                newImg.onclick = function() {
-                    openFullSize(this.src);
-                }
-
-
-                imgBasic.appendChild(newImg);
-                cont.appendChild(newCell);
-            }           
-        }
-        
-        function nextImg() {
-            if(currIndex === imgData[section].length) {
-                currIndex = 0;
-            } else {
-                currIndex++;
-            }
-
-            currImg.src = imgData[section][currIndex].src;
-        }
-
-        function prevImg() {
-            if(currIndex < 0) {
-                currIndex = imgData[section].length - 1;
-            } else {
-                currIndex--;
-            }
-            clearInterval();
-            currImg.src = imgData[section][currIndex].src;
-        }
-
-        function setSection(selCat) {
-            section = selCat;
-            setIndex();
-            getImage();
-        }
-
-        function openFullSize(val) {
-            //alert(val);
-            document.getElementById("full-size").src = val; //imgData[section][currIndex].src;
-            fullSizeModal.style.visibility = "visible";
-        }
-
-        fullSizeModal.addEventListener("click", function() {
-            fullSizeModal.style.visibility = "hidden";
-        });
-
-        function setIndex() {
-            currIndex = 0;
-        }
-
-        /* slideshow function */
-
-        playBtn.addEventListener("click", function() {
-            if(slideStatus === false) {
-                playBtn.src = "./icons/pause-button.png";
-                clearInterval();
-                setInterval(function() {
-                   nextImg();
-                }, 3000);
-            } else {
-                playBtn.src = "./icons/play-button.png";
-                slideStatus === true;
-                clearInterval();
-            }
-        });
-
-
-    </script>
+    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./hamb-menu.js"></script>
 
 </body>
 </html>

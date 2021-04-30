@@ -31,14 +31,19 @@ h1,h2,h3,h4,h5,h6 {
 
 }
 
+#header-logo {
+    margin: 0 auto;
+}
+
 #header-img {
-    width: 150px;
+    width: 400px;
 }
 
 #social-links {
+    margin: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .social-a {
@@ -275,6 +280,7 @@ h1,h2,h3,h4,h5,h6 {
     width: auto;
     height: 400px;
     margin: 0 auto;
+    cursor: pointer;
     position: relative;
 }
 
@@ -374,6 +380,15 @@ h1,h2,h3,h4,h5,h6 {
     transition: transform .15s;
 }
 
+#close-btn {
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--light-gray);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
 /* ABOUT ME */
 
 #about {
@@ -459,7 +474,7 @@ label {
 
 #full-size-modal {
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -470,13 +485,16 @@ label {
 }
 
 #modal-container {
+    position: relative;
+    top: 10%;
     width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
 .full-size-img {
-    max-height: 550px;
+    max-height: 700px;
+    width: auto;
     object-fit: scale-down;
     margin: 0 auto;
 }
@@ -492,6 +510,20 @@ label {
 @media screen and (max-width: 600px) {
     #image-container {
         width: 100%;
+    }
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #header-logo {
+        margin: 0 auto;
+    }
+
+    #header-img {
+        max-width: 300px;
     }
 
     /* SPLASH PAGE */
@@ -533,6 +565,13 @@ label {
         display: block;
     }
 
+    /* CONTACT */
+
+    #contact {
+        width: 80%;
+    }
+
+
     /* ABOUT */
 
     #about {
@@ -556,4 +595,51 @@ label {
         transform: scale(.75);
     }
 
+    /* hamburger menu */
+
+    .nav {
+        height: 0;
+        visibility: hidden;
+    }
+
+    #main-nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resp-nav {
+        visibility: visible;
+    }
+
+    .nav-icon {
+        width: 40px;
+        cursor: pointer;
+        margin: 10px 10px 10px 0;
+    }
+
+    .nav-icon:after, 
+    .nav-icon:before, 
+    .nav-icon div {
+        background-color: var(--pink-brown);
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 5px;
+        margin: 7px 0;
+        transition: all .2s ease-in-out;
+    }
+
+    /* Modal */
+
+    #full-size-modal {
+        position: fixed;
+        top: 0;
+        grid-template-rows: auto 1fr auto;
+        width: 100%;
+        
+    }
+
+    .full-size-img {
+        width: 100%;
+    }
 }
