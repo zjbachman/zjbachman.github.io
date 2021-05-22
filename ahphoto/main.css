@@ -1,5 +1,5 @@
 *, *:before, *:after {
-    --light-gray: rgba(245, 245, 245, .8);
+    --light-gray: hsla(0, 0%, 96%, 0.8);
     --smoke: whitesmoke;
     --dark-gray: #333;
     --header-text: 'Amatic SC', cursive;
@@ -296,14 +296,29 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0 5px;
 }
 
+.img-left-325 {
+    position: relative;
+    left: -325px;
+}
+
 .img-left-300 {
     position: relative;
     left: -300px;
 }
 
+.img-left-275 {
+    position: relative;
+    left: -275px;
+}
+
 .img-left-250 {
     position: relative;
     left: -250px;
+}
+
+.img-left-225 {
+    position: relative;
+    left: -225px;
 }
 
 .img-left-200 {
@@ -649,5 +664,57 @@ label {
 
     .full-size-img {
         width: 100%;
+    }
+
+    /* Image Offests */
+    
+    .mobile-offset-25 {
+        position: relative;
+        left: -25px !important;
+    }
+
+    .mobile-offset-50 {
+        position: relative;
+        left: -50px !important;
+    }
+
+    .mobile-offset-75 {
+        position: relative;
+        left: -75px !important;
+    }
+
+    .mobile-offset-100 {
+        position: relative;
+        left: -100px !important;
+    }
+
+    .mobile-offset-125 {
+        position: relative;
+        left: -125px !important;
+    }
+
+    .mobile-offset-150 {
+        position: relative;
+        left: -150px !important;
+    }
+
+    .mobile-offset-175 {
+        position: relative;
+        left: -175px !important;
+    }
+
+    .mobile-offset-200 {
+        position: relative;
+        left: -200px !important;
+    }
+
+    .mobile-offset-225 {
+        position: relative;
+        left: -225px !important;
+    }
+
+    .mobile-offset-250 {
+        position: relative;
+        left: -250px !important;
     }
 }

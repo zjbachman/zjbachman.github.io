@@ -1,10 +1,10 @@
 let currImg = document.getElementById("full-size");
 let fullImg = document.getElementById("full-img");
 let currIndex = 0;
-let section = "children";
+let section = "children"; // set as children by default
 let fullSizeModal = document.getElementById("full-size-modal");
 let playBtn = document.getElementById("play-btn");
-let slideStatus = false;
+let slideStatus = "stopped"; // stopped by default
 
 window.onload = getImage();
 
@@ -88,16 +88,14 @@ function resetIndex() {
 /* slideshow function */
 
 playBtn.addEventListener("click", function() {
-    if(slideStatus === false) {
-        slideStatus=true;
+    let timerId = setInterval(nextImg, 3000);
+    alert(slideStatus);
+    if(slideStatus === "stopped") {
         playBtn.src = "./icons/pause-button.png";
-        clearInterval();
-        setInterval(function() {
-            nextImg();
-        }, 3000);
+        slideStatus === "playing";
     } else {
         playBtn.src = "./icons/play-button.png";
-        slideStatus === false;
-        clearInterval();
+        clearInterval(timerId);
     }
 });
+

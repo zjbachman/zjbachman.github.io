@@ -1,56 +1,52 @@
-:root {
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-    --dark-blue: #021422;
-    --white: whitesmoke;
-    --light-blue: #a9c1d6;
-    --yellow: #c4ec10;
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+html, body {
+    height: 100%;
 }
 
-body {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    font-family: sans-serif;
+.bg-img {
+    background: url('./images/forest-1030832_1920.jpg') center fixed no-repeat;
+    background-size: cover;
+    height: 100vh;
+    filter: blur(1px);
 }
 
 #main-container {
-    width: 90%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: space-between;
+    width: 100%;
 }
 
 #nav {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    text-align: right;
-    padding-right: 10px;
+    padding: 10px;
+    position: fixed;
+    height: 50px;
+    background-color: rgba(71, 72, 71, 0.404);
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .nav-link {
-    margin: 5px 20px 5px 0;
+    color: rgb(126, 182, 62);
+    text-shadow: .5px 1px black;
+    padding: 10px;
+    margin: 5px;
+    font-size: 25px;
     text-decoration: none;
-    color: var(--light-blue);
-    transition: color .5s;
 }
 
 .nav-link:hover {
-    color: var(--yellow);
-    transition: color .5s;
-}
-
-.nav-link:hover:before {
-    content: "+ ";
-    transition: content 1s;
+    color:white;
+    transform: scale(.9);
+    transition: transform .5s;
 }
 
 #content-container {
-    width: 70%;
-    padding-left: 30px;
-    border-left: 1px solid var(--light-blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: #FFF;
+    text-shadow: 1px .5px #333;
+    font-size: 22px;
 }
