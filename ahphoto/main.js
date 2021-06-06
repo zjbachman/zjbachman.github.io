@@ -4,6 +4,7 @@ let currIndex = 0;
 let section = "children"; // set as children by default
 let fullSizeModal = document.getElementById("full-size-modal");
 let playBtn = document.getElementById("play-btn");
+let pauseBtn = document.getElementById("pause-btn");
 let slideStatus = "stopped"; // stopped by default
 
 window.onload = getImage();
@@ -87,15 +88,26 @@ function resetIndex() {
 
 /* slideshow function */
 
+let timerId;
+
 playBtn.addEventListener("click", function() {
-    let timerId = setInterval(nextImg, 3000);
-    alert(slideStatus);
-    if(slideStatus === "stopped") {
-        playBtn.src = "./icons/pause-button.png";
-        slideStatus === "playing";
-    } else {
-        playBtn.src = "./icons/play-button.png";
-        clearInterval(timerId);
-    }
+    timerId = setInterval(nextImg, 3000);
+
+    playBtn.style.visibility = "hidden";
+    playBtn.style.height = "0px";
+    playBtn.style.width = "0px";
+    pauseBtn.style.height = "50px";
+    pauseBtn.style.width = "50px";
+    pauseBtn.style.visibility = "visible";
+
 });
 
+pauseBtn.addEventListener("click", function() {
+    clearInterval(timerId);
+    pauseBtn.style.visibility = "hidden";
+    pauseBtn.style.height = "0px";
+    pauseBtn.style.width = "0px";
+    playBtn.style.visibility = "visible";
+    playBtn.style.height = "50px";
+    playBtn.style.height = "50px";
+});

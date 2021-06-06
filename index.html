@@ -4,27 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forty-One Web Development</title>
+    <title>Zack Bachman - Front-End Web Developer</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        #home {
+            height: 100vh;
+            margin-top: 500px;
+            width: 800px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        #projects {
+            height: 100vh;
+            width: 800px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 10px auto;
+            background-color: rgb(57, 95, 57, .4);
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #contact {
+            padding: 30px 0 30px 0;
+            width: 100%;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        #mail-form {
+            margin: 0 auto;
+            width: 800px;
+        }
+
+        /* Projects */
+        .project-box {
+            width: 250px;
+            height: 250px;
+            background-color: darkgray;
+            border: yellow;
+            margin: 2px;
+
+        }
+
+        /* Contact */
+        label {
+            vertical-align: top;
+            font-size: 20px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="bg-img"></div>
+    <div class="nav-icon" id="hamb-menu">
+        <div></div>
+    </div>
+
     <div id="main-container">
-        <div class="nav-icon" id="hamb-menu">
-            <div></div>
-        </div>
+
         <div id="nav">
-            <a href="" class="nav-link">HOME</a>
-            <a href="" class="nav-link">PROJECTS</a>
-            <a href="" class="nav-link">ABOUT</a>
-            <a href="" class="nav-link">CONTACT</a>
+            <a href="#home" class="nav-link">home</a>
+            <a href="#projects" class="nav-link">projects</a>
+            <a href="#about" class="nav-link">about</a>
+            <a href="#contact" class="nav-link">contact</a>
         </div>
         <div id="content-container">
-            <p>
-                Hi. My name is Zack. I build websites using HTML, CSS, and JavaScript.
+            <div id="home">
+                <h1>Zachary Bachman</h1>
+                <h4>Front-End Web Developer</h4>
+                <p>
 
-                Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1030832">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1030832">Pixabay</a>
-            </p>
+                </p>
+            </div>
+            <div id="projects">
+                <h3>Projects</h3>
+                <span class="project-box"></span><span class="project-box"></span><span class="project-box"></span><span class="project-box"></span><span class="project-box"></span>
+            </div>
+            <div id="about">
+
+            </div>
+            <div id="contact">
+                <form id="mail-form">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
 </body>
