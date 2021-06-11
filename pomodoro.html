@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: content-box;
+        }
+
+        body {
+            background-color: lightslategrey;
+            color: white;
+        }
+
+        .title-txt {
+            font-size: 80px;
+            text-align: center;
+            text-shadow: 2px 4px pink;
+        }
+
+        #main-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #clock-container {
+            background-color:lightslategrey;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .num-box {
+            font-size: 100px;
+            color: greenyellow;
+            font-weight: bolder;
+            font-family: monospace;
+            background-color: #333;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #checks {
+            background-color: lightcoral;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .boxes {
+            margin: 0 40px;
+            height: 30px;
+            width: 30px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-body">
+        <h1 class="title-txt">Pomodoro Timer</h1>
+        <div id="clock-container">
+            <div class="num-box">2</div>
+            <div class="num-box">2</div>
+            <div class="num-box">:</div>
+            <div class="num-box">3</div>
+            <div class="num-box">6</div>
+        </div>
+        <div id="checks">
+            <input class="boxes" type="checkbox">
+            <input class="boxes" type="checkbox">
+            <input class="boxes" type="checkbox">
+            <input class="boxes" type="checkbox">
+            <input class="boxes" type="checkbox">
+        </div>
+        <div id="control">
+            <button type="button" id="reset">reset</button>
+        </div>
+    </div>
+</body>
+</html>

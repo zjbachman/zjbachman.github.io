@@ -7,18 +7,27 @@
     <title>Zack Bachman - Front-End Web Developer</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <style>
+
         #home {
             height: 100vh;
             margin-top: 500px;
-            width: 800px;
+            max-width: 800px;
             background-color: rgba(255, 255, 255, 0.3);
             margin: 0 auto;
             padding: 10px;
         }
 
+        #blurb {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
         #projects {
             height: 100vh;
-            width: 800px;
+            max-width: 800px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -27,6 +36,7 @@
             padding: 5px;
             justify-content: center;
             align-items: center;
+            overflow-y:initial;
         }
 
         #contact {
@@ -38,7 +48,8 @@
 
         #mail-form {
             margin: 0 auto;
-            width: 800px;
+            max-width: 800px;
+            border: 1px solid black;
         }
 
         /* Projects */
@@ -74,18 +85,37 @@
         </div>
         <div id="content-container">
             <div id="home">
-                <h1>Zachary Bachman</h1>
-                <h4>Front-End Web Developer</h4>
-                <p>
+                <div id="blurb">
+                    <h1>Zachary Bachman</h1>
+                    <h4>Front-End Web Developer</h4>
+                    <p>
+                        
+                    </p>
+                </div>
 
-                </p>
             </div>
-            <div id="projects">
-                <h3>Projects</h3>
-                <span class="project-box"></span><span class="project-box"></span><span class="project-box"></span><span class="project-box"></span><span class="project-box"></span>
+            <div id="projects">     
+                <div class="project-box"></div>
+                <span class="project-box"></span>
+                <span class="project-box"></span>
+                <span class="project-box"></span>
+                <span class="project-box"></span>
             </div>
             <div id="about">
-
+                <h3>Education</h3>
+                <ul>
+                    <li class="edu-li">Lehigh Carbon Community College <br> 2015-2017 <br> GPA - 3.4</li>
+                    <li class="edu-li"></li>
+                    <li class="edu-li"></li>
+                    <li class="edu-li"></li>
+                    <li class="edu-li"></li>
+                </ul>
+                <h3>Work History</h3>
+                <ul>
+                    <li class="edu-li">Home Care Giver July 2014 - present</li>
+                    <li class="edu-li"></li>
+                    <li class="edu-li"></li>
+                </ul>
             </div>
             <div id="contact">
                 <form id="mail-form">

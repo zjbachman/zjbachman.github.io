@@ -20,7 +20,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px auto;
-    width: 800px;
+    max-width: 800px;
     justify-content: center;
 }
 
