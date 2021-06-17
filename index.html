@@ -8,10 +8,15 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <style>
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
         #home {
             height: 100vh;
             margin-top: 500px;
-            max-width: 800px;
             background-color: rgba(255, 255, 255, 0.3);
             margin: 0 auto;
             padding: 10px;
@@ -26,47 +31,73 @@
         }
 
         #projects {
-            height: 100vh;
-            max-width: 800px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 10px auto;
+            margin: 0 auto;
             background-color: rgb(57, 95, 57, .4);
             padding: 5px;
             justify-content: center;
             align-items: center;
-            overflow-y:initial;
         }
 
         #contact {
             padding: 30px 0 30px 0;
             width: 100%;
             margin: 0 auto;
-            background-color: white;
+            background-color: rgba(180, 50, 200, .5);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
 
         #mail-form {
             margin: 0 auto;
             max-width: 800px;
-            border: 1px solid black;
+
         }
 
         /* Projects */
         .project-box {
-            width: 250px;
-            height: 250px;
-            background-color: darkgray;
-            border: yellow;
+            width: 300px;
+            height: 300px;
+            background-color: lightgreen;
+            border: 1px dotted black;
             margin: 2px;
 
+        }
+
+        /* About */
+
+        #about {
+          background-color: rgba(250, 175, 25, .6);
+          margin: 0px auto;
+          padding: 10px;
+        }
+
+        .edu {
+          padding: 10px;
+          margin: 10px;
+          background-color: rgba(255,255,255,.5);
+        }
+
+        .edu-style {
+          list-style: none;
         }
 
         /* Contact */
         label {
             vertical-align: top;
-            font-size: 20px;
+            font-size: 24px;
             display: block;
+            font-weight: bolder;
+        }
+
+        .txt-border {
+          box-shadow: 4px 4px rgb(15, 150, 225);
+          padding: 10px;
+          font-size: 20px;
+          margin-bottom: 5px;
         }
     </style>
 </head>
@@ -74,27 +105,27 @@
     <div class="nav-icon" id="hamb-menu">
         <div></div>
     </div>
-
+    <div id="nav">
+        <a href="#home" class="nav-link">home</a>
+        <a href="#projects" class="nav-link">projects</a>
+        <a href="#about" class="nav-link">about</a>
+        <a href="#contact" class="nav-link">contact</a>
+    </div>
     <div id="main-container">
 
-        <div id="nav">
-            <a href="#home" class="nav-link">home</a>
-            <a href="#projects" class="nav-link">projects</a>
-            <a href="#about" class="nav-link">about</a>
-            <a href="#contact" class="nav-link">contact</a>
-        </div>
+
         <div id="content-container">
             <div id="home">
                 <div id="blurb">
                     <h1>Zachary Bachman</h1>
                     <h4>Front-End Web Developer</h4>
                     <p>
-                        
+
                     </p>
                 </div>
 
             </div>
-            <div id="projects">     
+            <div id="projects">
                 <div class="project-box"></div>
                 <span class="project-box"></span>
                 <span class="project-box"></span>
@@ -102,39 +133,50 @@
                 <span class="project-box"></span>
             </div>
             <div id="about">
+              <div class="edu">
                 <h3>Education</h3>
-                <ul>
+                <ul class="edu-style">
                     <li class="edu-li">Lehigh Carbon Community College <br> 2015-2017 <br> GPA - 3.4</li>
-                    <li class="edu-li"></li>
+                    <li class="edu-li">Dean's List: Septhember 2015 - December 2017</li>
                     <li class="edu-li"></li>
                     <li class="edu-li"></li>
                     <li class="edu-li"></li>
                 </ul>
+              </div>
+              <div class="edu">
                 <h3>Work History</h3>
-                <ul>
+                <ul class="edu-style">
                     <li class="edu-li">Home Care Giver July 2014 - present</li>
                     <li class="edu-li"></li>
                     <li class="edu-li"></li>
                 </ul>
+              </div>
+
             </div>
             <div id="contact">
                 <form id="mail-form">
                     <div>
                         <label for="name">Name:</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" class="txt-border">
                     </div>
                     <div>
                         <label for="email">Email:</label>
-                        <input type="text" name="email">
+                        <input type="text" name="email" class="txt-border">
                     </div>
                     <div>
                         <label for="message">Message:</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10"  class="txt-border"></textarea>
                     </div>
                 </form>
 
             </div>
         </div>
     </div>
+
+    <script>
+      let navTop = document.getElementById("nav").offsetTop;
+
+      
+    </script>
 </body>
 </html>

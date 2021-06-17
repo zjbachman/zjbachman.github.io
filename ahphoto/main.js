@@ -79,7 +79,15 @@ fullSizeModal.addEventListener("click", function() {
 */
 document.getElementById("close-btn").addEventListener('click', () => {
     fullSizeModal.style.visibility = "hidden";
-    slideStatus = false;
+    if(timerId) {
+        clearInterval(timerId);
+        playBtn.style.height = "30px";
+        playBtn.style.width = "30px";
+        playBtn.style.visibility = "visible";
+        pauseBtn.style.height = "30px";
+        pauseBtn.style.width = "30px";
+        pauseBtn.style.visibility = "hidden";
+    }
 });
 
 function resetIndex() {
@@ -96,8 +104,8 @@ playBtn.addEventListener("click", function() {
     playBtn.style.visibility = "hidden";
     playBtn.style.height = "0px";
     playBtn.style.width = "0px";
-    pauseBtn.style.height = "50px";
-    pauseBtn.style.width = "50px";
+    pauseBtn.style.height = "30px";
+    pauseBtn.style.width = "30px";
     pauseBtn.style.visibility = "visible";
 
 });
@@ -107,7 +115,7 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.visibility = "hidden";
     pauseBtn.style.height = "0px";
     pauseBtn.style.width = "0px";
+    playBtn.style.height = "30px";
+    playBtn.style.width = "30px";
     playBtn.style.visibility = "visible";
-    playBtn.style.height = "50px";
-    playBtn.style.height = "50px";
 });
