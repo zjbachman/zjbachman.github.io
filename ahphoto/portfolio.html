@@ -16,7 +16,7 @@
     <div id="main-container">
         <div id="full-header">
             <div id="header-logo">
-                <a href="./index.html"><img src="assets/drawing.svg" id="header-img"></a>
+                <a href="./index.html"><img src="assets/drawing.svg" class="fadeOut" id="header-img"></a>
             </div>
             <div id="header">
                 <div class="nav-icon" id="hamb-menu">
@@ -50,14 +50,21 @@
         </footer>
 
         <div id="full-size-modal">
-            <span id="close-btn">&times;</span>
+            <div id="close-btn-row">
+                <div id="close-btn">&times;</div>
+            </div>
+
             <div id="modal-container">
                 <img src="" class="full-size-img" id="full-size">
                 <div class="modal-nav">
-                    <img src="./icons/play-button.png" id="play-btn">
-                    <img src="./icons/pause-button.png" id="pause-btn">
+                    <img src="./icons/prev-button.png" id="prev-btn" class="btn-space btn">
+                    <img src="./icons/play-button.png" id="play-btn" class="hidden-btn">
+                    <img src="./icons/pause-button.png" id="pause-btn" class="hidden-btn">
+                    <img src="./icons/next-button.png" id="next-btn" class="btn-space btn">
                 </div>
             </div>
+            
+
         </div>
     </div>
     <script type="text/javascript" src="./main.js"></script>

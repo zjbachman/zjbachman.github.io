@@ -14,14 +14,17 @@ body {
 }
 
 #nav {
-    padding: 0px 10px;
-    height: 50px;
+    background-color: rgb(255,255,255, .4);
+    padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px auto;
-    max-width: 800px;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    margin: 0 auto;
 }
 
 .nav-link {

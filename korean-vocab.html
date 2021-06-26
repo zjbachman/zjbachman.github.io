@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Vocabulary</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet"> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(20, 175, 200);
+            font-family: 'Baloo Tammudu 2', cursive;
+        }
+
+        .title {
+            text-align:center;
+            margin: 10px;
+            color: white;
+            text-shadow: .5px .25px #333;
+            font-size: 40px;
+        }
+
+        #main-container {
+            padding: 10px;
+            background-color: rgba(255,255,255, .8);
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 5px;
+            box-shadow: 5px 2px rgba(200,200,200, .6);
+        }
+
+        .vocab-link {
+            background-color: rgb(173, 211, 142);
+            text-shadow: .5px .25px white;
+            width: 225px;
+            height: 180px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: bolder;
+            color: #000;
+            padding: 5px;
+            text-align: center;
+            vertical-align: middle;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .vocab-link:hover {
+            transform: scale(.95);
+            transition: transform .25s;
+        }
+
+        .box-place-holder {
+            position:relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .icon {
+            height: 64px;
+            width: 64px;
+        }
+
+        .icon-txt {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="title">Korean Vocabulary</h1>
+    <div id="main-container">
+        <a href="#" class="vocab-link" onclick="showVocab(this.value)" value="animals">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-cat-64.png" class="icon" alt="Cat Icon">
+                <p class="icon-txt">Animals</p>
+            </div>
+        </a>
+        <a href="#" class="vocab-link" onclick="showVocab(this.value)" value="food">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-hamburger-64.png" class="icon" alt="Food Icon">
+                <p class="icon-txt">Food</p>
+            </div>
+        </a>
+        <a href="#" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-house-80.png" class="icon" alt="House Icon">
+                <p class="icon-txt">Around the House</p>
+            </div>
+        </a>
+        <a href="#" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-family-64.png" class="icon" alt="Family Icon">
+                <p class="icon-txt">Family</p>
+            </div>
+        </a>
+        <a href="#" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-person-64.png" class="icon" alt="People Icon">
+                <p class="icon-txt">People</p>
+            </div>
+        </a>
+        <a href="#" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-family-clothes-64.png" alt="" class="icon">
+                <p class="icon-txt">Clothing</p>
+            </div>
+        </a>
+        <a href="" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-computer-64.png" alt="" class="icon">
+                <p class="icon-txt">Electronics</p>
+            </div>
+        </a>
+        <a href="" class="vocab-link">
+            <div class="box-place-holder">
+                <img src="./hangeul/icons8-basketball-net-64.png" alt="" class="icon">
+                <p class="icon-txt">Sports</p>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const arr = ['햄버거'];
+        const vocab = {
+            'animals': [
+                {'cat': '고양이'},
+                {'dog': '개'},
+                {'fox': '여우'},
+                {'bird': ''},
+                {'tiger': '호랑이'},
+                {'owl': '올빼미'},
+                {'fish': '물고기'},
+                {'mouse': '쥐'},
+                {'bear': '곰'},
+                {'elephant': '코끼리'},
+                {'giraffe': '기린'},
+                {'gopher': '부지런한 사람'},
+                {'skunk': '스컹크'},
+                {'deer': '사슴'},
+                {'cow': '소'},
+                {'horse': '말'},
+                {'shark': '상어'},
+                {'otter': '수달'},
+                {'seal': '봉인'},
+                {'whale': '고래'},
+                {'snake': '뱀'}
+            ],
+            'clothing': [
+                {'shirt': ''},
+                {'t-shirt': ''},
+                {'jeans': ''},
+                {'pants': ''},
+                {'dress': ''},
+                {'sneakers': ''},
+                {'shoes': ''},
+                {'earrings': ''},
+                {'necklace': ''},
+                {'hat': ''},
+                {'glasses': ''},
+                {'sunglasses': ''},
+                {'socks': ''},
+                {'watch': ''},
+                {'headband': ''},
+                {'suit': ''},
+                {'tuxedo': ''}
+            ],
+            'electronics': [ 
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+            ],
+            'food': [
+                {'hamburger': '햄버거'},
+                {'tea': '차'},
+                {'pizza': ''},
+                {'rice': ''},
+                {'apple': ''},
+                {'chicken': ''},
+                {'beer': ''},
+                {'soda': ''},
+                {'pork': ''},
+                {'beef': ''},
+                {'water': ''},
+                {'milk': ''},
+                {'orange': ''},
+                {'orange juice': ''},
+                {'beans': ''},
+                {'pineapple': ''},
+                {'carrot': ''},
+                {'onion': ''},
+                {'celery': ''},
+                {'taco': ''},
+                {'tomato': ''},
+                {'lettuce': ''},
+                {'barbeque': ''},
+                {'steak': ''},
+                {'ketchup': ''},
+                {'soy sauce': ''},
+                {'soy': ''},
+                {'sauce': ''},
+                {'radish': ''},
+                {'chips': ''},
+                {'potato': ''},
+                {'french fries': ''},
+                {'sushi': ''},
+                {'bacon': ''},
+                {'banana': ''},
+                {'cherry': ''},
+                {'peach': ''},
+                {'zucchini': ''},
+                {'cucumber': ''},
+                {'coconut': ''},
+                {'cracker': ''},
+                {'cake': ''},
+                {'cookie': ''},
+                {'bread': ''},
+                {'egg': ''},
+                {'pasta': ''},
+                {'chewing gum': ''},
+                {'ham': ''},
+                {'spam': ''},
+                {'ice cream': ''},
+                {'candy': ''},
+                {'pie': ''},
+                {'asparagus': ''},
+                {'avocado': ''},
+                {'hot dog': ''},
+                {'chocolate': ''},
+                {'vanilla': ''},
+                {'custard': ''}
+            ],
+            'house': [
+                {'kitchen': ''},
+                {'living room': ''},
+                {'bedroom': ''},
+                {'bathroom': ''},
+                {'laundry room': ''},
+                {'toilet': ''},
+                {'sink': ''},
+                {'shower': ''},
+                {'lamp': ''},
+                {'floor': ''},
+                {'carpet': ''},
+                {'couch': ''},
+                {'television': ''},
+                {'knife': ''},
+                {'microwave': ''},
+                {'stove': ''},
+                {'vacuum': ''},
+                {'fan': ''},
+                {'air conditioner': ''},
+                {'chair': ''},
+                {'table': ''},
+                {'stove': ''},
+                {'oven': ''},
+                {'blender': ''},
+                {'laundry basket': ''},
+                {'washing machine': ''},
+                {'dryer': ''},
+                {'hair brush': ''},
+                {'radiator': ''},
+                {'desk': ''},
+                {'light bulb': ''},
+                {'telephone': ''},
+                {'towel': ''},
+                {'toilet paper': ''},
+                {'garbage can': ''},
+                {'window': ''},
+                {'door': ''},
+                {'roof': ''},
+                {'box': ''},
+                {'shelf': ''}
+            ],
+            'family': [
+                {'mom': ''},
+                {'dad': ''},
+                {'sister': ''},
+                {'brother': ''},
+                {'aunt': ''},
+                {'uncle': ''},
+                {'cousin': ''},
+                {'niece': ''},
+                {'newphew': ''},
+                {'grandmom': ''},
+                {'granddad': ''},
+                {'brother-in-law': ''},
+                {'sister-in-law': ''},
+                {'wife': ''},
+                {'husband': ''},
+                {'son': ''},
+                {'daughter': ''},
+                {'step-son': ''},
+                {'step-daughter': ''},
+                {'baby': ''},
+                {'newborn': ''},
+                {'': ''}
+            ],
+            'people': [
+                {'student': ''},
+                {'teacher': ''},
+                {'chef': ''},
+                {'doctor': ''},
+                {'police officer': ''},
+                {'president': ''},
+                {'boss': ''},
+                {'business person': ''},
+                {'nurse': ''},
+                {'janitor': ''},
+                {'waitor': ''},
+                {'mechanic': ''},
+                {'babysitter': ''}
+            ],
+            'sports': [
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''},
+                {'': ''}
+            ]
+        }
+
+        // window.onload = () => { alert(vocab.food[1].tea)} // Number corresponds to place in 'food'
+        window.onload = () => {
+            //alert(Object.keys(vocab).length);
+        }
+
+        let showVocab = (event, val) => {
+            alert(Object.keys(vocab.val));
+        }
+
+    </script>
+</body>
+</html>

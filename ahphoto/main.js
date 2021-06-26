@@ -5,7 +5,10 @@ let section = "children"; // set as children by default
 let fullSizeModal = document.getElementById("full-size-modal");
 let playBtn = document.getElementById("play-btn");
 let pauseBtn = document.getElementById("pause-btn");
+let prevBtn = document.getElementById("prev-btn");
+let nextBtn = document.getElementById("next-btn");
 let slideStatus = "stopped"; // stopped by default
+let fadeInterval;
 
 window.onload = getImage();
 
@@ -45,6 +48,7 @@ function nextImg() {
     }
 
     currImg.src = imgData[section][currIndex].src;
+
 }
 
 function prevImg() {
@@ -53,7 +57,6 @@ function prevImg() {
     } else {
         currIndex--;
     }
-    clearInterval();
     currImg.src = imgData[section][currIndex].src;
 }
 
@@ -70,6 +73,8 @@ function setSection(selCat) {
 function openFullSize(val) {
     document.getElementById("full-size").src = val;
     fullSizeModal.style.visibility = "visible";
+    playBtn.classList.remove('hidden-btn');
+    playBtn.classList.add('show-btn');
 }
 
 /*
@@ -79,15 +84,19 @@ fullSizeModal.addEventListener("click", function() {
 */
 document.getElementById("close-btn").addEventListener('click', () => {
     fullSizeModal.style.visibility = "hidden";
+    
+    playBtn.className = '';
+    pauseBtn.className = '';
+    currImg.className = '';
+    playBtn.classList.add('hidden-btn');
+    pauseBtn.classList.add('hidden-btn');
+    currImg.className = 'full-size-img';
+
     if(timerId) {
         clearInterval(timerId);
-        playBtn.style.height = "30px";
-        playBtn.style.width = "30px";
-        playBtn.style.visibility = "visible";
-        pauseBtn.style.height = "30px";
-        pauseBtn.style.width = "30px";
-        pauseBtn.style.visibility = "hidden";
     }
+
+
 });
 
 function resetIndex() {
@@ -100,22 +109,39 @@ let timerId;
 
 playBtn.addEventListener("click", function() {
     timerId = setInterval(nextImg, 3000);
-
-    playBtn.style.visibility = "hidden";
-    playBtn.style.height = "0px";
-    playBtn.style.width = "0px";
-    pauseBtn.style.height = "30px";
-    pauseBtn.style.width = "30px";
-    pauseBtn.style.visibility = "visible";
+    playBtn.classList.remove('show-btn');
+    playBtn.classList.add('hidden-btn');
+    pauseBtn.classList.remove('hidden-btn');
+    pauseBtn.classList.add('show-btn');
 
 });
 
 pauseBtn.addEventListener("click", function() {
     clearInterval(timerId);
-    pauseBtn.style.visibility = "hidden";
-    pauseBtn.style.height = "0px";
-    pauseBtn.style.width = "0px";
-    playBtn.style.height = "30px";
-    playBtn.style.width = "30px";
-    playBtn.style.visibility = "visible";
+    pauseBtn.classList.remove('show-btn');
+    pauseBtn.classList.add('hidden-btn');
+    playBtn.classList.add('show-btn');
+
 });
+
+nextBtn.addEventListener("click", function() {
+    if(timerId) {
+        clearInterval(timerId);
+    }
+    clearBtn();
+    nextImg();    
+});
+
+prevBtn.addEventListener("click", function() {
+    if(timerId) {
+        clearInterval(timerId);
+    }
+    clearBtn();
+    prevImg();
+});
+
+let clearBtn = () => {
+    pauseBtn.className = '';
+    playBtn.className = '';
+    playBtn.classList.add('show-btn');
+}
