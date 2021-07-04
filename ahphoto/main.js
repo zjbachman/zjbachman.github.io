@@ -13,6 +13,7 @@ let fadeInterval;
 window.onload = getImage();
 
 function getImage () {
+    console.log(`Max length: ${imgData[section].length}`);
     // currImg.src = imgData[section][currIndex].src; 
     let cont = document.getElementById("container");
 
@@ -41,22 +42,27 @@ function getImage () {
 }
 
 function nextImg() {
-    if(currIndex === imgData[section].length) {
+    console.log(currIndex);
+    if(currIndex == imgData[section].length - 1) {
         currIndex = 0;
     } else {
         currIndex++;
     }
 
+    console.log(currIndex);
     currImg.src = imgData[section][currIndex].src;
 
 }
 
 function prevImg() {
-    if(currIndex < 0) {
+    console.log(`Before Conditional: ${currIndex}`);
+    if(currIndex == 0) {
         currIndex = imgData[section].length - 1;
     } else {
         currIndex--;
     }
+
+    console.log(`After Conditional: ${currIndex}`);
     currImg.src = imgData[section][currIndex].src;
 }
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Vocabulary</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    
+    <h1 class="title">Korean Vocabulary</h1>
+    <div id="main-container">
+        <div class="vocab-link" onclick="openModal('animals');">
+            <div class="box-place-holder">
+                <img src="./icons8-cat-64.png" class="icon" alt="Cat Icon">
+                <p class="icon-txt">Animals</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('food')">
+            <div class="box-place-holder">
+                <img src="./icons8-hamburger-64.png" class="icon" alt="Food Icon">
+                <p class="icon-txt">Food</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('house')">
+            <div class="box-place-holder">
+                <img src="./icons8-house-80.png" class="icon" alt="House Icon">
+                <p class="icon-txt">Around the House</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('family')">
+            <div class="box-place-holder">
+                <img src="./icons8-family-64.png" class="icon" alt="Family Icon">
+                <p class="icon-txt">Family</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('people')">
+            <div class="box-place-holder">
+                <img src="./icons8-person-64.png" class="icon" alt="People Icon">
+                <p class="icon-txt">People</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('clothing')">
+            <div class="box-place-holder">
+                <img src="./icons8-family-clothes-64.png" alt="" class="icon">
+                <p class="icon-txt">Clothing</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('electronics')">
+            <div class="box-place-holder">
+                <img src="./icons8-computer-64.png" alt="" class="icon">
+                <p class="icon-txt">Electronics</p>
+            </div>
+        </div>
+        <div class="vocab-link" onclick="openModal('sports')">
+            <div class="box-place-holder">
+                <img src="./icons8-basketball-net-64.png" alt="" class="icon">
+                <p class="icon-txt">Sports</p>
+            </div>
+        </div>
+        <div id="vocab-modal" class="vocab-modal">
+            <span class="close-btn">&times;</span>
+            <div class="word-box">
+                <div class="word">
+                    
+                <p class="hangul"></p>
+                <p class="english"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -513,6 +513,10 @@ h1,h2,h3,h4,h5,h6 {
     margin: 20px auto;
 }
 
+.contact-padding {
+    margin-bottom: 20px;
+}
+
 #contact-msg {
     font-size: 20px;
     font-family: var(--sans-text);
@@ -706,6 +710,7 @@ html, body {
 
     #contact {
         width: 80%;
+        margin-bottom: 20px;
     }
 
 
