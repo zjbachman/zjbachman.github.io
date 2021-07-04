@@ -139,3 +139,32 @@ body {
 .english {
     font-size: 20px;
 }
+
+@media screen and (max-width: 600px) {
+
+    .vocab-link {
+        width: 125px;
+        height: 125px;
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon-txt {
+        font-size: 18px;
+        padding: 0;
+    }
+
+    .word-box {
+        width: 95%;
+        height: 30%;
+        padding: 2px;
+    }
+
+    .hangul { font-size: 30px; width: 100%;}
+    .english { font-size: 18px; font-weight: bold;}
+}
