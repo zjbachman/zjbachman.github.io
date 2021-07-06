@@ -27,7 +27,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 5px;
-    box-shadow: 5px 2px rgba(200,200,200, .6);
 }
 
 .vocab-link {
