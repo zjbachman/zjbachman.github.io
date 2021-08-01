@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #393259;
+    --pink: #fbe7e0;
+}
+
+body {
+    background-color: var(--pink);
+    color: var(--blue);
+}
+
+.main-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.chapter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-btn {
+    width: 90%;
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    align-items: center;
+    font-size: 30px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body {
+            background-color: rgb(35, 110, 94);
+        }
+
+        #main-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .task {
+            padding: 15px;
+            background-color: white;
+            color: black;
+            border: 1px solid rgb(14, 51, 68);
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-body">
+        <h1>To-Do</h1>
+        <ul class="task-list">
+            <li class="task">Leticia Bufoni</li>
+            <li class="task">Lana Rhoades</li>
+            <li class="task">Riley Reid</li>
+            <li class="task">Karen Fukuhara</li>
+            <li class="task">AJ Michalka</li>
+        </ul>
+
+    </div>
+
+    <script>
+        if(!localStorage.getItem("tasks")) {
+            console.log('doesn"t exist');
+        }
+        //let currentTask = localStorage.getItem("tasks");
+/*
+        if(currentTask.length > 0) {
+            alert('I want to fuck Lana Rhoades big ass');
+        }
+
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background-color: hsl(277, 31%, 15%);
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            background-color: hsl(0, 0%, 89%);
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .created {
+            padding: 10px;
+        }
+
+        .field-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cell {
+            margin: 5px auto;
+            background-color: rgb(190, 179, 18);
+            padding: 10px;
+            width: 300px;
+            box-shadow: 1px 2px rgba(68, 62, 62, 0.6);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+
+        #add-new {
+            padding: 20px;
+            font-size: 15px;
+            margin: 5px;
+
+        }
+
+    </style>
+    <title>Dummy Data Generator</title>
+</head>
+<body>
+    <div id="main-container">
+        <div class="generated">
+            <div class="created" id="created">
+                CREATE TABLE name (name_id INT PRIMARY KEY, name_first VARCHAR(30), name_last VARCHAR(30));
+            </div>
+        </div>
+        <div class="field-container">
+             <button type="button" id="add-new">+ <br><br> Add New</button>
+        </div>
+    </div>
+    <script>
+        let add = document.querySelector("#add-new");
+        let field = document.querySelector(".field-container");
+
+        add.addEventListener("click", ()=> {
+            let newCell = document.createElement("div");
+
+            newCell.className = "cell";
+            field.appendChild(newCell);
+        })
+    </script>
+</body>
+</html>
